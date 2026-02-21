@@ -1,9 +1,10 @@
-from django.urls import path
+from django.urls import path,include
 from api.api.api import product_api_view
 from .views import home
 
 urlpatterns = [
     path('',home,name='home'),
     path('product/',product_api_view,name='product_api_view'),
-    path('product/<int:pk>/',product_api_view,name='product_api_view')
+    path('product/<int:pk>/',product_api_view,name='product_api_view'),
+    path('',include('api.routers')) 
 ]

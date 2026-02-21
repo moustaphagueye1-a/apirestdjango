@@ -6,7 +6,7 @@ class ProductSerializer1(serializers.ModelSerializer):
     detail_link=serializers.SerializerMethodField()
     class Meta:
         model=Product
-        fields=['id','name','price_in_euros','description_in_euros','detail_link']
+        fields = '__all__'
         
     def get_price_in_euros(self,obj):
         return obj.get_price_in_euros()
